@@ -2,20 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --radius: 0.5rem;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.custom_scroll::-webkit-scrollbar {
+  height: 4px;
+  width: 3px;
+  border-radius: 6px;
+}
+
+.custom_scroll-layout::-webkit-scrollbar-thumb {
+  @apply bg-[#2D1810] hover:bg-[#D4A762];
+  border-radius: 16px;
+}
+
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-[#FDF6EC];
 }
