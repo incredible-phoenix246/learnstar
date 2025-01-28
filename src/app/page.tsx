@@ -1,4 +1,5 @@
 import { Contact } from "@/components/contact";
+import { DigitalResults } from "@/components/digital-results";
 import { Features } from "@/components/features";
 import { Hero } from "@/components/hero";
 import { Pricing } from "@/components/pricing";
@@ -11,6 +12,7 @@ const page = () => {
       <Hero />
       <Features />
       <TryItOut />
+      <DigitalResults />
       <Pricing />
       <Contact />
     </main>
