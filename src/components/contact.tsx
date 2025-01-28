@@ -21,8 +21,8 @@ export function Contact() {
             Get in Touch
           </h2>
           <p className="text-brown/80 text-lg max-w-2xl mx-auto">
-            Ready to transform your school? Contact us today and let&apos;s discuss
-            how LearnStar.AI can help you achieve your goals.
+            Ready to transform your school? Contact us today and let&apos;s
+            discuss how LearnStar.AI can help you achieve your goals.
           </p>
         </motion.div>
 
@@ -42,7 +42,7 @@ export function Contact() {
                 <h3 className="text-lg font-semibold text-brown mb-1">
                   Email Us
                 </h3>
-                <p className="text-brown/70">info@learnstar.ai</p>
+                <p className="text-brown/70">covenantchukwudi@gmail.com</p>
               </div>
             </div>
 
@@ -54,7 +54,7 @@ export function Contact() {
                 <h3 className="text-lg font-semibold text-brown mb-1">
                   Call Us
                 </h3>
-                <p className="text-brown/70">+234 123 456 7890</p>
+                <p className="text-brown/70">+234 8178383994</p>
               </div>
             </div>
 

@@ -7,6 +7,9 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { ArrowLeft, Send, Bot, User } from "lucide-react";
 import Link from "next/link";
+import { marked } from "marked";
+import parse from "html-react-parser";
+import { cn } from "@/utils";
 
 export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit, isLoading } =
@@ -42,42 +45,48 @@ export default function Chat() {
           </div>
 
           <div className="h-[600px] overflow-y-auto p-4 space-y-4 custom_scroll">
-            {messages.map((message) => (
-              <motion.div
-                key={message.id}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className={`flex ${
-                  message.role === "assistant" ? "justify-start" : "justify-end"
-                } items-end gap-3 ${
-                  message.role === "assistant" ? "mr-12" : "ml-12"
-                }`}
-              >
-                {message.role === "assistant" && (
-                  <div className="w-8 h-8 rounded-full bg-golden/20 flex items-center justify-center flex-shrink-0">
-                    <Bot className="h-5 w-5 text-golden" />
-                  </div>
-                )}
-
-                <div
-                  className={`max-w-[80%] rounded-2xl p-4 ${
+            {messages.map((message) => {
+              const html = marked.parse(message.content);
+              return (
+                <motion.div
+                  key={message.id}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className={cn(
+                    "flex items-end gap-3",
                     message.role === "assistant"
-                      ? "bg-white text-brown rounded-bl-none"
-                      : "bg-golden text-cream rounded-br-none"
-                  }`}
+                      ? "justify-start"
+                      : "justify-end",
+                    message.role === "assistant" ? "mr-12" : "ml-12"
+                  )}
                 >
-                  <p className="text-sm whitespace-pre-wrap">
-                    {message.content}
-                  </p>
-                </div>
+                  {message.role === "assistant" && (
+                    <div className="w-8 h-8 rounded-full bg-golden/20 flex items-center justify-center flex-shrink-0">
+                      <Bot className="h-5 w-5 text-golden" />
+                    </div>
+                  )}
 
-                {message.role === "user" && (
-                  <div className="w-8 h-8 rounded-full bg-golden flex items-center justify-center flex-shrink-0">
-                    <User className="h-5 w-5 text-cream" />
+                  <div
+                    className={cn(
+                      "max-w-[80%] rounded-2xl p-4",
+                      message.role === "assistant"
+                        ? "bg-white text-brown rounded-bl-none"
+                        : "bg-golden text-cream rounded-br-none"
+                    )}
+                  >
+                    <p className="text-sm whitespace-pre-wrap">
+                      {parse(html as string)}
+                    </p>
                   </div>
-                )}
-              </motion.div>
-            ))}
+
+                  {message.role === "user" && (
+                    <div className="w-8 h-8 rounded-full bg-golden flex items-center justify-center flex-shrink-0">
+                      <User className="h-5 w-5 text-cream" />
+                    </div>
+                  )}
+                </motion.div>
+              );
+            })}
             {isLoading && (
               <motion.div
                 initial={{ opacity: 0 }}

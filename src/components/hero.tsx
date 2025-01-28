@@ -63,7 +63,7 @@ export function Hero() {
               <div className="absolute inset-0 bg-golden rounded-full animate-rotate" />
               <div className="absolute inset-4 bg-cream rounded-full overflow-hidden">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-iCLTb2qgXgAJYMIevMIbQ90Ed4Km77.png"
+                  src="/classroom.jpg"
                   alt="Students learning"
                   fill
                   className="object-cover"
