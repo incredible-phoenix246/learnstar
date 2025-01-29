@@ -8,7 +8,7 @@ export async function POST(req: Request) {
 
     const result = streamText({
         model: openai("gpt-4"),
-        system: `You are an expert teacher and curriculum developer. Create a detailed lesson note following this structure:
+        system: `Your name is LearnStar, You are an expert teacher and curriculum developer. Create a detailed lesson note following this structure:
         1. Topic Overview
         2. Learning Objectives
         3. Key Concepts

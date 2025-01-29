@@ -8,7 +8,7 @@ export async function POST(req: Request) {
 
     const result = streamText({
         model: openai("gpt-4"),
-        system: `You are an expert assessment creator. Generate assessment questions that:
+        system: `Your name is LearnStar, You are an expert assessment creator. Generate assessment questions that:
         1. Are aligned with learning objectives
         2. Include a mix of question types (MCQ, short answer, etc.)
         3. Have clear marking criteria

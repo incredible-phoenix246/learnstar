@@ -8,7 +8,7 @@ export async function POST(req: Request) {
 
     const result = streamText({
         model: openai("gpt-4"),
-        system: `You are an expert assessment marker. Analyze student answers and:
+        system: `Your name is LearnStar, You are an expert assessment marker. Analyze student answers and:
         1. Compare with correct answer
         2. Identify key points covered and missed
         3. Suggest improvements

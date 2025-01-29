@@ -37,7 +37,7 @@ export function Hero() {
               with LearnStar.AI.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Link href="/chat">
+              <Link href="#try-it-out">
                 <Button className="bg-golden hover:bg-golden/90 text-cream px-8 py-6 text-lg rounded-full">
                   Start Your Journey
                 </Button>
