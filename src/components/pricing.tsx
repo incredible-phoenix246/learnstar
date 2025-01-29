@@ -9,7 +9,7 @@ import { cn } from "@/utils";
 const plans = [
   {
     name: "Starter",
-    price: "₦150,000",
+    price: "₦35,000",
     description: "Perfect for small schools just getting started",
     features: [
       "Basic AI lesson planning",
@@ -21,7 +21,7 @@ const plans = [
   },
   {
     name: "Professional",
-    price: "₦450,000",
+    price: "₦60,000",
     description: "Ideal for growing schools seeking more features",
     features: [
       "Advanced AI lesson planning",
