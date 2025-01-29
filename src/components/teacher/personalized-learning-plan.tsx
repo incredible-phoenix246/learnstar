@@ -69,6 +69,7 @@ export function PersonalizedLearningPlan() {
           value={learningStyle}
           onChange={(e) => setLearningStyle(e.target.value)}
           required
+          className=" h-[100px] resize-none"
         />
         <Button
           type="submit"

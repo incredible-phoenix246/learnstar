@@ -65,6 +65,7 @@ export function ProfessionalDevelopment() {
           value={goals}
           onChange={(e) => setGoals(e.target.value)}
           required
+          className=" h-[100px] resize-none"
         />
         <Button
           type="submit"

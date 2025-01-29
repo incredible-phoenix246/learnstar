@@ -52,6 +52,7 @@ export function VirtualClassroom() {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           required
+          className=" h-[100px] resize-none"
         />
         <Input
           type="date"
