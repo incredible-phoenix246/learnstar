@@ -10,8 +10,8 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed w-full bg-cream/80 backdrop-blur-md z-50 border-b border-golden/20 max-[1440px]">
-      <div className="px-4">
+    <nav className="fixed w-full bg-cream/80 backdrop-blur-md z-50 border-b border-golden/20">
+      <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center space-x-2">
             <div className="w-10 h-10 bg-brown rounded-full flex items-center justify-center">
@@ -27,6 +27,12 @@ export function Navbar() {
               className="text-brown hover:text-golden transition-colors"
             >
               Features
+            </Link>
+            <Link
+              href="/teacher"
+              className="text-brown hover:text-golden transition-colors"
+            >
+              For Teachers
             </Link>
             <Link
               href="#pricing"
@@ -77,6 +83,13 @@ export function Navbar() {
                 onClick={() => setIsOpen(false)}
               >
                 Features
+              </Link>
+              <Link
+                href="/teacher"
+                className="text-brown hover:text-golden transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                For Teachers
               </Link>
               <Link
                 href="#pricing"
